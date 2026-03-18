@@ -55,9 +55,9 @@ def get_number(prompt):
 if __name__ == "__main__":
     # get user input
     print("Enter parameters:\n")
-    p = get_number("Enter p: ")
-    a = get_number("Enter a: ")
-    b = get_number("Enter b: ")
+    a = get_number("Enter value for a: ")
+    b = get_number("Enter value for  b: ")
+    p = get_number("Enter prime modulus p: ")
     
     print("\nEnter Point P (x1, y1):\n")
     x1 = get_number("x1: ")
@@ -72,4 +72,7 @@ if __name__ == "__main__":
 
     result = operations(a, p, point_p, point_q)
 
-    print("\nResult: ",result)
+    if result is None:
+        print("\nResult: P + Q = (Point at infinity)")
+    else:
+        print("\nResult: ",result)
