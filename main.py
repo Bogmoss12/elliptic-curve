@@ -44,22 +44,35 @@ def operations(a, p, P, Q):
 
 #bale None irereturn niya pag infinity siya, gawa nalang function to print P + Q = Point at Infinity or some shit like that
 
-if __name__ == "__main__":
-    # Manual input muna stinart q para madali test
-    p = 17
-    a = 2
-    b = 2
-    x1 = 5
-    y1 = 1
-    x2 = 5
-    y2 = 16
+# error handling for if hindi integer input
+def get_number(prompt):
+    while True:
+         try:
+             return int(input(prompt))
+         except ValueError:
+             print("Input is not an integer.")
 
+if __name__ == "__main__":
+    # get user input
+    print("Enter parameters:\n")
+    a = get_number("Enter value for a: ")
+    b = get_number("Enter value for  b: ")
+    p = get_number("Enter prime modulus p: ")
+    
+    print("\nEnter Point P (x1, y1):\n")
+    x1 = get_number("x1: ")
+    y1 = get_number("y1: ")
+    
+    print("\nEnter Point Q (x2, y2):\n")
+    x2 = get_number("x2: ")
+    y2 = get_number("y2: ")
+    
     point_p = (x1, y1)
     point_q = (x2, y2)
 
     result = operations(a, p, point_p, point_q)
 
     if result is None:
-        print("\nResult: Infinity (Point at infinity)")
+        print("\nResult: P + Q = (Point at infinity)")
     else:
         print("\nResult: ",result)
