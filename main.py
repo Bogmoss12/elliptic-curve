@@ -59,4 +59,7 @@ if __name__ == "__main__":
 
     result = operations(a, p, point_p, point_q)
 
-    print(result)
+    if result is None:
+        print("\nResult: Infinity (Point at infinity)")
+    else:
+        print("\nResult: ",result)
